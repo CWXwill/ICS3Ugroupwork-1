@@ -1,0 +1,373 @@
+<!doctype html>
+<head>
+	<title>Musical Film</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<style>
+		body{
+			background-color: black;
+			color:white;
+		}
+		.A{
+			width: 30%;
+			display: inline-block;
+		}
+		.B{
+			width:100%;
+		}
+		h3,h1{
+			line-height: 35px;
+			
+            
+		}
+		h1{
+			font-family: Lobster;
+		}
+
+		:root{
+  --background-dark: black;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-color:black;
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trsnsform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+/*di bu*/
+a {
+    text-decoration: none;
+    color: inherit;
+ }
+
+ .c-icon {
+    width:  36px;
+    height: 36px;
+    fill: currentColor;
+    transition: .2s;
+ }
+
+.c-link--facebook:hover  { color: #3b5998 }
+.c-link--twitter:hover   { color: #55acee }
+.c-link--google:hover    { color: #dd4b39 }
+.c-link--pinterest:hover { color: #bd081c }
+.c-link--instagram:hover { color: #833ab4 }
+.c-link--snapchat:hover  { color: #fbe00f }
+.c-link--facebook:hover::after  { background: #3b5998 }
+.c-link--twitter:hover::after   { background: #55acee }
+.c-link--google:hover::after    { background: #dd4b39 }
+.c-link--pinterest:hover::after { background: #bd081c }
+.c-link--instagram:hover::after { background: #833ab4 }
+.c-link--snapchat:hover::after  { background: #fbe00f }
+
+.c-link {
+    position: relative;
+    color: #bbb;
+}
+
+.c-link:not(:last-of-type) {
+    margin-right: 15px;
+}
+
+.c-tooltip::before,
+.c-tooltip::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    opacity: 0;
+    transition: .2s;
+}
+
+.c-tooltip::before {
+    content: '';
+    bottom: calc(100% + 2px);
+    border: solid 5px transparent;
+    border-top-color: currentColor;
+}
+
+.c-tooltip::after {
+    content: attr(aria-label);
+    bottom: calc(100% + 12px);
+    padding: .61em .93em;
+    font-size: .875rem;
+    color: white;
+    border-radius: 3px;
+}
+
+.c-tooltip:hover::before,
+.c-tooltip:hover::after {
+    opacity: 1;
+    transform: translate(-50%);
+}
+
+.pens-link-container {
+    flex-basis: 100%;
+    font-size: .9rem;
+    text-align: center;
+}
+
+.pens-link {
+    margin-bottom: 0;
+    background: white;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .1);
+    border: none;
+}
+/*contact*/
+
+.info{
+ color:lightgrey;
+ font-family: comic sans ms;
+ text-align: right;
+}
+
+/*ziti*/
+.space{
+	width:1050px;
+	margin: auto;
+	line-height: 30px;
+}
+.nav{
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index: 1;
+}
+.K{
+    background-color: black;
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: comics sans ms;
+    display: inline-block;
+    width: 19.9%;
+    margin-left: -13px;
+}
+.K:hover{
+    background-color: whitesmoke;
+    color:black;
+}
+	</style>
+	</head>
+	<body>
+
+		<div class='nav'>
+    <a class='K'href='index.html'>Home</a>
+    <a class='K'href='fiction movies.html'>Fiction </a>
+    <a class='K'href='Musical Movies.html'>Musical</a>
+    <a class='K'href='action film.html'>Action</a>
+    <a class='K'href='detective flim.html'>Detective</a>
+    </div>
+
+		<br><br><center><h1>Musical Film</h1><br><br>
+			<h3>What is Musical Film?</h3>
+		<h3 class='space'>Musical Film is a movie genre. In these movies the narrative is often expressed in song, sometimes with dance. Most of the Musical Film were performed by operas or based on Broadway. Also it has many different type. Like Hollywood Musical Film, which is most famous. The Indian Musical Film and the Spanish Musical Film also has a long history.</h3><br>
+		<h3>In this section I'll focus on four classic song-and-dance movies. You can access them below.</h3>
+		
+		
+
+<section class="hero-section">
+  <div class="card-grid">
+    <a class="card" href="MAMMA MIA.html">
+      <div class="card__background" style="background-image: url(https://hips.hearstapps.com/hmg-prod/images/mv5bmta2mdu0mjm0mzreqtjeqwpwz15bbwu3mdywnzgwnzeat-v1-1588866744.jpg?crop=0.9876543209876543xw:1xh;center,top&resize=980:*)"></div>
+      <div class="card__content">
+        <p class="card__category">Musical Film</p>
+        <h3 class="card__heading">MAMMA MIA!</h3>
+      </div>
+    </a>
+
+    <a class="card" href="lalaland.html">
+      <div class="card__background" style="background-image: url(https://hips.hearstapps.com/hmg-prod/images/mv5bmzuzndm2nzm2mv5bml5banbnxkftztgwntm3ntg4oteat-v1-sy1000-sx675-al-1588866539.jpg?crop=0.9876543209876543xw:1xh;center,top&resize=980:*)"></div>
+      <div class="card__content">
+        <p class="card__category">Musical Film</p>
+        <h3 class="card__heading">La La Land</h3>
+      </div>
+    </li>
+     </a>
+    <a class="card" href="rain.html">
+      <div class="card__background" style="background-image: url(https://hips.hearstapps.com/hmg-prod/images/mv5bmwuynjq5mtatndjhys00mwq0ltk2ztatzme4mwnlmjmwmzg3xkeyxkfqcgdeqxvynta4nzy1mzyat-v1-1588868599.jpg?crop=1xw:1xh;center,top&resize=980:*)"></div>
+      <div class="card__content">
+        <p class="card__category">Musical Film</p>
+        <h3 class="card__heading">Singin' in the Rain</h3>
+      </div>
+
+    <a class="card" href="sound of music.html">
+      <div class="card__background" style="background-image: url(https://hips.hearstapps.com/hmg-prod/images/mv5bodixnjhkyjetyzuymi00ytnjlwe1yjktnjayy2i2mwnknmnml2ltywdll2ltywdlxkeyxkfqcgdeqxvymtqxnzmzndiat-v1-1588866457.jpg?crop=0.9448123620309051xw:1xh;center,top&resize=980:*)"></div>
+      <div class="card__content">
+        <p
+           class="card__category">Musical Film</p>
+        <h3 class="card__heading">The Sound of Music</h3>
+      </div>
+    </a>
+</section>
+
+<h3>About history</h3>
+		<p class='space'>Musicals began to grow in popularity in the late 1920s with the advent of talkies. MGM's 1929 Broadway Melody is regarded as the first real song-and-dance movie. The Wizard of Oz (1939), directed by Victor Fleming, used new technologies such as Technicolor and became a milestone in musical films. The 1930s through the early 1950s are considered the Golden Age of the musical film and the most popular period for musical films in the Western world. Disney's musical film "Snow White and the Seven Dwarfs" is Disney's earliest animated feature film, and it earned Walt Disney an honorable mention at the 11th Academy Awards. Song and dance movies reached their glory in the 50's and 60's. The famous Musical Film "The Sound of Music" born in that time.It began to shrink in the 70's, and after the 90's, it took on a new form. But in recent times when sci-fi, action, disaster and horror films have taken their turn, the era of the song and dance movie has faded away.</p><br>
+		<h3>Hollywood Musical Film</h3>
+		<p class='space'>The Musical Film is arguably one of Hollywood's most brilliant genres. The 100-year history of the burlesque film is a clue to the rise and fall of the entire Hollywood film industry. The earliest breakthrough in movie sound technology came from Warner Brothers. They burned sound onto a wax record and then played it back in sync with the movie film to synchronize sound and picture. It kicked off the era of talkies. The first real musical film in history was The Secret History of China Rouge, which was released in 1929 and premiered in Hollywood. Later, the number of musical films exploded and became one of the most important forms of Hollywood cinema at the time. In the 30's, the Hollywood song-and-dance movie had its golden age. In the early 1950s, the maturation of Technicolor technology brought some fresh air to Hollywood cabaret. But in the 1950s and 1970s musical films were gradually marginalized . In the 21st century, its innovative audiovisual effects and narrative style provided a new interpretation of the musical film.</p>
+		</center>
+		<br><br>
+<h3 class='info'> Emailaddress: xxx@gamil.com</h3>
+<h3 class='info'> official number: 123456789</h3>
+<h3 class='info'> instagram group: xxx@xxx</h3>
+
+
+	<!-- footer -->
+<a href=" " class="c-link c-link--facebook c-tooltip" aria-label="Facebook">
+    <svg class="c-icon"><use xlink:href="#icon--facebook"></use></svg>
+</a>
+
+<a href="#0" class="c-link c-link--twitter c-tooltip" aria-label="Twitter">
+    <svg class="c-icon"><use xlink:href="#icon--twitter"></use></svg>
+</a>
+
+<a href="#0" class="c-link c-link--google c-tooltip" aria-label="Google+">
+    <svg class="c-icon"><use xlink:href="#icon--google"></use></svg>
+</a>
+
+<a href="#0" class="c-link c-link--pinterest c-tooltip" aria-label="Pinterest">
+    <svg class="c-icon"><use xlink:href="#icon--pinterest"></use></svg>
+</a>
+
+<a href="#0" class="c-link c-link--instagram c-tooltip" aria-label="Instagram">
+    <svg class="c-icon"><use xlink:href="#icon--instagram"></use></svg>
+</a>
+
+<a href="#0" class="c-link c-link--snapchat c-tooltip" aria-label="Snapchat">
+    <svg class="c-icon"><use xlink:href="#icon--snapchat"></use></svg>
+</a>
+
+<svg style="display: none">
+    <symbol id="icon--facebook" viewBox="0 0 24 24">
+        <path d="M19,4V7H17A1,1 0 0,0 16,8V10H19V13H16V20H13V13H11V10H13V7.5C13,5.56 14.57,4 16.5,4M20,2H4A2,2 0 0,0 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" />
+    </symbol>
+    <symbol id="icon--twitter" viewBox="0 0 24 24">
+        <path d="M17.71,9.33C17.64,13.95 14.69,17.11 10.28,17.31C8.46,17.39 7.15,16.81 6,16.08C7.34,16.29 9,15.76 9.9,15C8.58,14.86 7.81,14.19 7.44,13.12C7.82,13.18 8.22,13.16 8.58,13.09C7.39,12.69 6.54,11.95 6.5,10.41C6.83,10.57 7.18,10.71 7.64,10.74C6.75,10.23 6.1,8.38 6.85,7.16C8.17,8.61 9.76,9.79 12.37,9.95C11.71,7.15 15.42,5.63 16.97,7.5C17.63,7.38 18.16,7.14 18.68,6.86C18.47,7.5 18.06,7.97 17.56,8.33C18.1,8.26 18.59,8.13 19,7.92C18.75,8.45 18.19,8.93 17.71,9.33M20,2H4A2,2 0 0,0 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" />
+    </symbol>
+    <symbol id="icon--google" viewBox="0 0 24 24">
+        <path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z" />
+    </symbol>
+    <symbol id="icon--pinterest" viewBox="0 0 24 24">
+        <path d="M13,16.2C12.2,16.2 11.43,15.86 10.88,15.28L9.93,18.5L9.86,18.69L9.83,18.67C9.64,19 9.29,19.2 8.9,19.2C8.29,19.2 7.8,18.71 7.8,18.1C7.8,18.05 7.81,18 7.81,17.95H7.8L7.85,17.77L9.7,12.21C9.7,12.21 9.5,11.59 9.5,10.73C9.5,9 10.42,8.5 11.16,8.5C11.91,8.5 12.58,8.76 12.58,9.81C12.58,11.15 11.69,11.84 11.69,12.81C11.69,13.55 12.29,14.16 13.03,14.16C15.37,14.16 16.2,12.4 16.2,10.75C16.2,8.57 14.32,6.8 12,6.8C9.68,6.8 7.8,8.57 7.8,10.75C7.8,11.42 8,12.09 8.34,12.68C8.43,12.84 8.5,13 8.5,13.2A1,1 0 0,1 7.5,14.2C7.13,14.2 6.79,14 6.62,13.7C6.08,12.81 5.8,11.79 5.8,10.75C5.8,7.47 8.58,4.8 12,4.8C15.42,4.8 18.2,7.47 18.2,10.75C18.2,13.37 16.57,16.2 13,16.2M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" />
+    </symbol>
+    <symbol id="icon--instagram" viewBox="0 0 24 24">
+        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+    </symbol>
+    <symbol id="icon--snapchat" viewBox="0 0 24 24">
+        <path d="M12,20.45C10.81,20.45 10.1,19.94 9.47,19.5C9,19.18 8.58,18.87 8.08,18.79C6.93,18.73 6.59,18.79 5.97,18.9C5.86,18.9 5.73,18.87 5.68,18.69C5.5,17.94 5.45,17.73 5.32,17.71C4,17.5 3.19,17.2 3.03,16.83C3,16.6 3.07,16.5 3.18,16.5C4.25,16.31 5.2,15.75 6,14.81C6.63,14.09 6.93,13.39 6.96,13.32C7.12,13 7.15,12.72 7.06,12.5C6.89,12.09 6.31,11.91 5.68,11.7C5.34,11.57 4.79,11.29 4.86,10.9C4.92,10.62 5.29,10.42 5.81,10.46C6.16,10.62 6.46,10.7 6.73,10.7C7.06,10.7 7.21,10.58 7.25,10.54C7.14,8.78 7.05,7.25 7.44,6.38C8.61,3.76 11.08,3.55 12,3.55C12.92,3.55 15.39,3.76 16.56,6.38C16.95,7.25 16.86,8.78 16.75,10.54C16.79,10.58 16.94,10.7 17.27,10.7C17.54,10.7 17.84,10.62 18.19,10.46C18.71,10.42 19.08,10.62 19.14,10.9C19.21,11.29 18.66,11.57 18.32,11.7C17.69,11.91 17.11,12.09 16.94,12.5C16.85,12.72 16.88,13 17.04,13.32C17.07,13.39 17.37,14.09 18,14.81C18.8,15.75 19.75,16.31 20.82,16.5C20.93,16.5 21,16.6 20.97,16.83C20.81,17.2 20,17.5 18.68,17.71C18.55,17.73 18.5,17.94 18.32,18.69C18.27,18.87 18.14,18.9 18.03,18.9C17.41,18.79 17.07,18.73 15.92,18.79C15.42,18.87 15,19.18 14.53,19.5C13.9,19.94 13.19,20.45 12,20.45Z" />
+    </symbol>
+</svg>
+
+
+	</body>
+	</html>
